@@ -1,7 +1,25 @@
+@use './src/styles/colors';
+
 body {
   margin: 0;
   font-family: 'Roboto', sans-serif;
   font-size: 14px;
+  background-color: colors.$N900;
+  color: colors.$N400;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+a, a:visited,
+a:link, a:active {
+  text-decoration: none;
+  color: colors.$blue;
+}
+
+a {
+  cursor: pointer;
+}
+
+a:hover {
+  text-decoration: underline;
 }

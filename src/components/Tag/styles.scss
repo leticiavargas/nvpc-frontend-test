@@ -1,0 +1,17 @@
+@use './src/styles/colors';
+@use './src/styles/fonts';
+
+.tag {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid colors.$N800;
+  border-radius: 2em;
+  font-size: fonts.$small;
+  font-weight: fonts.$semiBold;
+  color: colors.$N400;
+  height: fit-content;
+  padding: 2px 8px;
+  margin: 0 8px;
+
+}
