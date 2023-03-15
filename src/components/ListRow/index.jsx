@@ -17,13 +17,19 @@ function ListRow({ item }) {
         { item.description }
       </div>
       <footer>
-        <a className='info' href={ item.stargazers_url }>
-          <FaRegStar className='icon' /> { item.stargazers_count } 
-        </a>
-        <a className='info' href={ item.forks_url }>
-          <FaCodeBranch  className='icon'/> { item.forks_count }
-        </a>
-        <span><FaBalanceScale className='icon' /> { item.license?.name }</span>
+        {item.stargazers_count > 0 && 
+          <a className='info' href={ item.stargazers_url }>
+            <FaRegStar className='icon' /> { item.stargazers_count } 
+          </a>
+        }
+        { item.forks_count > 0 &&
+          <a className='info' href={ item.forks_url }>
+            <FaCodeBranch  className='icon'/> { item.forks_count }
+          </a>
+        }
+        { item.license !== null && 
+          <span><FaBalanceScale className='icon' /> { item.license?.name }</span>
+        }
         <span>Updated {item.updated_at} </span>
       </footer>
     </li>
