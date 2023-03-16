@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import api from 'services/api';
-import { RepositoriesList } from 'components';
+import { RepositoriesList, SearchBar } from 'components';
 import './styles.scss';
 
 function Repositories() {
@@ -10,7 +10,7 @@ function Repositories() {
   useEffect(() => {
     async function getAllRepo() {
       try {
-        const response = await api.get('users/leticiavargas/repos');
+        const response = await api.get('users/leticiavargas/repos?page=1&per_page=1000');
         setRepositories(response.data);
       } catch (error) {
         console.error(error);
@@ -18,15 +18,16 @@ function Repositories() {
     }
     getAllRepo();
   },[]);
+
+
   
 
   return(
-    <div>
-      Repositories
-      ============
+    <main className='repositories'>
+      <SearchBar />
       {repositories && <RepositoriesList repositories={repositories} />}
       
-    </div>
+    </main>
   )
 }
 

@@ -10,6 +10,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+html, body, #root {
+  height: 100vh;
+}
+
 a, a:visited,
 a:link, a:active {
   text-decoration: none;
@@ -22,4 +26,9 @@ a {
 
 a:hover {
   text-decoration: underline;
+}
+
+ul, li {
+  margin: unset;
+  padding: unset;
 }
