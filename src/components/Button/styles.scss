@@ -1,0 +1,23 @@
+@use 'src/styles/colors';
+@use 'src/styles/fonts';
+
+.button {
+  display: flex;
+  align-items: center;
+  border: 1px solid colors.$transparent;
+  border-radius: 6px;
+  background-color: colors.$N800;
+  color: colors.$N200;
+  font-weight: fonts.$bold;
+  font-size: fonts.$regular;
+  line-height: fonts.$medium;
+  padding: 4px 16px;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.2s ease-out;
+}
+
+.button:hover {
+  background-color: colors.$N700;
+  border-color: colors.$N400;
+}
