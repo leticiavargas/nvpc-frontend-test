@@ -1,16 +1,22 @@
 import { FaCheck } from 'react-icons/fa';
 import './styles.scss';
 
-function SelectMenu() {
+function SelectMenu({ menuTitle, options=[], radioGroupName, onChangeValue, selected }) {
 
   return(
     <div className="select-menu">
-      <header>
-        Select alguma coisa
-      </header>
+      <header>{menuTitle}</header>
       <div className='menu-list'>
-        <label><FaCheck /> <span> Item 1</span></label>
-        <label>item 2</label>
+        {options.map((option) => {
+          const isChecked = Boolean(selected === option);
+          return (
+            <label key={option}>
+              <input type="radio" value={option} name={radioGroupName}  checked={isChecked} onChange={onChangeValue} hidden />
+              {isChecked && <FaCheck /> }
+              <span> {option} </span>
+            </label>
+          )
+        })}
       </div>
     </div>
   )

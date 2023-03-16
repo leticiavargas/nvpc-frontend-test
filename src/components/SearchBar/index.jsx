@@ -1,7 +1,8 @@
 import { SelectButton } from 'components';
+import { SORT, TYPES } from 'utils';
 import './styles.scss';
 
-function SearchBar() {
+function SearchBar({ sort, type, language, handleSort, handleType, handleLanguage }) {
 
   return(
     <div className='search-bar'>
@@ -9,9 +10,29 @@ function SearchBar() {
         className='search-input'
         placeholder='Find a repository'
       />
-      <SelectButton buttonChildren="Type" />
-      <SelectButton buttonChildren="Language" />
-      <SelectButton buttonChildren="Sort" />
+      <SelectButton 
+        buttonName="Type"
+        menuTitle="Select type"
+        options={TYPES}
+        radioGroupName="type"
+        onChangeValue={handleType}
+        selected={type}
+      />
+      <SelectButton 
+        buttonName="Language"
+        menuTitle="Select language"
+        radioGroupName="language"
+        onChangeValue={handleLanguage}
+        selected={language}
+      />
+      <SelectButton 
+        buttonName="Sort"
+        menuTitle="Select order"
+        options={SORT}
+        radioGroupName="sort"
+        onChangeValue={handleSort}
+        selected={sort}
+      />
     </div>
   )
 }

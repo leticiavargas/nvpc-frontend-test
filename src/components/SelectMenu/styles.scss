@@ -43,6 +43,11 @@
       border-bottom: 1px solid colors.$N800;
 
       >span {
+        margin-left: 20px;
+        text-transform: capitalize;
+      }
+
+      >svg + span {
         margin-left: 8px;
       }
     }

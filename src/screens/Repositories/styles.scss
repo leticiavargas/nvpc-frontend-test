@@ -1,6 +1,14 @@
+@use 'src/styles/colors';
+
 main.repositories {
   height: 100%;
   display: flex;
   flex-direction: column;
   padding: 0 40px;
+
+  .filter-result {
+    border-bottom: 1px solid colors.$N700;
+    padding: 16px 0 ;
+    color: colors.$N200;
+  }
 }

@@ -1,12 +1,14 @@
 import { Button, SelectMenu } from 'components';
 import './styles.scss';
 
-function SelectButton({buttonChildren}) {
+function SelectButton({buttonName, ...otherProps}) {
   
   return(
     <div className='details'>
-      <Button children={buttonChildren} />
-      <SelectMenu />
+      <Button children={buttonName} />
+      <SelectMenu
+        {...otherProps}
+      />
     </div>
   )
 }
