@@ -1,0 +1,11 @@
+@use 'src/styles/colors';
+@use 'src/styles/fonts';
+
+.main-header {
+  padding: 20px 0;
+  font-size: fonts.$large;
+  font-weight: fonts.$extraBold;
+  color: colors.$N200;
+  background-color: colors.$overlay;
+  margin-bottom: 24px;
+}
