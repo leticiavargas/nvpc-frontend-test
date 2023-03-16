@@ -1,0 +1,35 @@
+@use 'src/styles/colors';
+@use 'src/styles/fonts';
+
+.search-bar {
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  padding: 16px 0;
+  border-bottom: 1px solid colors.$N700;
+
+  .search-input {
+   padding: 4px 12px;
+   font-size: fonts.$regular;
+   background-color: colors.$N900;
+   border: 1px solid colors.$N700;
+   color: colors.$N200;
+   vertical-align: middle;
+   border-radius: 6px;
+   margin-right: 16px;
+   flex: auto;
+   line-height: fonts.$medium;
+  }
+
+  .search-input::placeholder {
+    color: colors.$N700;
+    opacity: 1;
+  }
+
+   .search-input::focus,
+   .search-input::focus-visible {
+    border-color: colors.$blue;
+  }
+
+  
+}

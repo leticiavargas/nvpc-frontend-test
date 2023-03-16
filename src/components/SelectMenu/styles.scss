@@ -1,0 +1,54 @@
+@use 'src/styles/colors';
+@use 'src/styles/fonts';
+
+.select-menu {
+  position: absolute;
+  top: auto;
+  left: auto;
+  right: 0;
+
+  background-color: colors.$overlay;
+  color: colors.$N200;
+  border: 1px solid colors.$N700;
+  border-radius: 6px;
+  width: 300px;
+  height: auto;
+  max-height: 480px;
+  margin: 1px 0 16px 0;
+  box-shadow: colors.$boxShadow;
+  display: none;
+  font-size: fonts.$small;
+
+  >header {
+    border-bottom: 1px solid colors.$N800;
+    padding: 8px 8px 8px 16px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-weight: fonts.$semiBold;
+  }
+
+  .menu-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    >label {
+      display: flex;
+      box-sizing: border-box;
+      font-weight: fonts.$normal;
+      padding: 8px 8px 8px 16px;;
+      width: 100%;
+      cursor: pointer;
+      border-bottom: 1px solid colors.$N800;
+
+      >span {
+        margin-left: 8px;
+      }
+    }
+
+    >label:hover {
+      background-color: colors.$transparentNeutral;
+    }
+  }
+}
