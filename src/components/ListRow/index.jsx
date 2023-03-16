@@ -7,7 +7,7 @@ function ListRow({ item }) {
 
   const tagTitle = item.private ? "Private" : "Public";
 
-  return(
+  return (
     <li className='list-row'>
       <header className='title'>
         <a href={ item.html_url } >{ item.name }</a>
@@ -30,7 +30,7 @@ function ListRow({ item }) {
         { item.license !== null && 
           <span><FaBalanceScale className='icon' /> { item.license?.name }</span>
         }
-        <span>Updated {item.updated_at} </span>
+        <span>Updated {new Date(item.updated_at).toLocaleString()} </span>
       </footer>
     </li>
   )
