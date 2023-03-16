@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
-import { getAllRepo, getRepoByType } from 'utils';
+import { getAllRepo, getRepoByType } from 'services/repositories';
 import { RepositoriesList, SearchBar } from 'components';
 import './styles.scss';
 
