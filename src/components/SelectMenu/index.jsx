@@ -8,12 +8,13 @@ function SelectMenu({ menuTitle, options=[], radioGroupName, onChangeValue, sele
       <header>{menuTitle}</header>
       <div className='menu-list'>
         {options.map((option) => {
-          const isChecked = Boolean(selected === option);
+          const optionKey = (option?.key || option);
+          const isChecked = Boolean(selected === optionKey);
           return (
-            <label key={option}>
-              <input type="radio" value={option} name={radioGroupName}  checked={isChecked} onChange={onChangeValue} hidden />
+            <label key={optionKey}>
+              <input type="radio" value={optionKey} name={radioGroupName}  checked={isChecked} onChange={onChangeValue} hidden />
               {isChecked && <FaCheck /> }
-              <span> {option} </span>
+              <span> {option?.label || option} </span>
             </label>
           )
         })}

@@ -1,15 +1,17 @@
-import { SelectButton } from 'components';
+import { SelectButton, SearchInput } from 'components';
 import { SORT, TYPES } from 'utils';
 import './styles.scss';
 
-function SearchBar({ sort, type, language, handleSort, handleType, handleLanguage }) {
+function SearchBar({ sort, type, language, query, handleQuery, handleSort, handleType, handleLanguage }) {
 
   return(
     <div className='search-bar'>
-      <input 
-        className='search-input'
+      <SearchInput 
         placeholder='Find a repository'
+        value={query}
+        onChange={handleQuery}
       />
+      
       <SelectButton 
         buttonName="Type"
         menuTitle="Select type"
