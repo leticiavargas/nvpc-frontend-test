@@ -1,16 +1,17 @@
-<h1 align="center">📝 Desafio: Lista Reposiórios Github</h1>
+<h1 align="center">📝 Desafio: Lista Repositórios Github</h1>
 <p align="center">
   <img src="https://img.shields.io/badge/version-1.0.0-green" alt="badge de versão do projeto"/>
   <img src="https://img.shields.io/static/v1?label=NodeJS&message=18.14.0&color=339933&logo=node.js" alt="Badge versão NodeJS"/>
   <img src="https://img.shields.io/static/v1?label=ReactJS&message=%CB%8618.2.0&color=61DAFB&logo=react" alt="Badge versão React"/>
   <img src="https://img.shields.io/static/v1?label=Axios&message=%CB%861.3.4&color=5A29E4&logo=axios" alt="Badge versão Axios"/>
   <img src="https://img.shields.io/static/v1?label=Sass&message=%CB%861.59.2&color=CC6699&logo=sass" alt="Badge versão Sass"/>
+  <img src="https://img.shields.io/static/v1?label=Lodash&message=%CB%864.0.8&color=3492FF&logo=lodash" alt="Badge versão Lodash"/>
 </p>
 
 
 <p align="center">
  <a href="#-sobre-o-desafio">Sobre o desafio</a> •
- <a href="#-demo-do-projeto">Demo do projeto</a> •
+ <a href="#-demo-do-desafio">Demo do desafio</a> •
  <a href="#-funcionalidades">Funcionalidades</a> • 
  <a href="#-tecnologias">Tecnologias</a> • 
  <a href="#-como-executar-o-projeto">Como executar o projeto</a> • 
@@ -26,12 +27,12 @@
   Estão implementados filtros por tipo e linguagem principal do repositório, além da possibilidade de ordenação por nome, número de estrelas e data de atualização.
 </p>
 
-## 🎬 Demo do projeto
+## 🎬 Demo do desafio
   
 #### Veja o projeto em execução 
 
   <a href="https://leticiavargas.github.io/nvpc-frontend-test/" target="_blank">
-    <img src="https://img.shields.io/badge/Acessar%20Projeto%20-h%20web-green">
+    <img src="https://img.shields.io/badge/Acessar%20Projeto%20-%20web-green">
   </a>
 
 ## ⚙ Funcionalidades
