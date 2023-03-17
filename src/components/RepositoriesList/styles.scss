@@ -1,0 +1,11 @@
+@use 'src/styles/colors';
+@use 'src/styles/fonts';
+
+.any-repository {
+  color: colors.$N200;
+  font-size: fonts.$large;
+  font-weight: fonts.$bold;
+  margin: 32px 0;
+  padding: 32px;
+  box-sizing: border-box;
+}
