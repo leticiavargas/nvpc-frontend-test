@@ -1,12 +1,16 @@
 import api from './api';
 
-export async function getRepositories(type, query, sort='updated') {
+export async function getRepositories(type, query, sort='updated-desc', language) {
   let argument = '';
   
   if (query) {
-    argument= `${query}+in:name+`
+    argument= `${encodeURIComponent(query)}+in:name+`
   }
-  
+
+  if (language) {
+    argument += `language:${encodeURIComponent(language)}+`
+  }
+
   switch(type) {
     case "all":
       argument += 'fork:true';

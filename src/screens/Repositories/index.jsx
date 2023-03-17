@@ -12,14 +12,19 @@ function Repositories() {
   const [type, setType] = useState('all');
   const [language, setLanguage] = useState('all');
   const [query, setQuery] = useState('');
+  const [languageOptions, setLanguageOptions] = useState([]);
   
   useEffect(() => {
-    getRepositories(type, query, sort).then((response) => {
+    getRepositories(type, query, sort, language).then((response) => {
       setRepositories(response);
+      setLanguageOptions((languageOptions) => {
+        if (languageOptions.length) return languageOptions;
+        return Array.from(new Set(response.map((repository) => repository.language))).filter(language => Boolean(language));
+      })
     }).catch((error) => {
       alert(error.response.data.message);
     });   
-  }, [type, query, sort]);
+  }, [type, query, sort, language]);
 
   const handleQuery = (e) => {
     setQuery(e.target.value);
@@ -60,6 +65,7 @@ function Repositories() {
         type={type}s
         language={language}
         query={query}
+        languageOptions={languageOptions}
         handleQuery={handleQuery}
         handleSort={(e) => setSort(e.target.value)}
         handleType={(e) => setType(e.target.value)} 

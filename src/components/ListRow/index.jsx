@@ -1,5 +1,5 @@
 import { Tag }  from 'components';
-import { FaRegStar, FaCodeBranch, FaBalanceScale } from 'react-icons/fa';
+import { FaRegStar, FaCodeBranch, FaBalanceScale, FaCircle } from 'react-icons/fa';
 import './styles.scss';
 
 
@@ -17,6 +17,9 @@ function ListRow({ item }) {
         { item.description }
       </div>
       <footer>
+        {item.language &&
+          <span><FaCircle className='icon'/> {item.language}</span>
+        }
         {item.stargazers_count > 0 && 
           <a className='info' href={ item.stargazers_url }>
             <FaRegStar className='icon' /> { item.stargazers_count } 

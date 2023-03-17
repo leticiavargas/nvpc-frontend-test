@@ -2,7 +2,7 @@ import { SelectButton, SearchInput } from 'components';
 import { SORT, TYPES } from 'utils';
 import './styles.scss';
 
-function SearchBar({ sort, type, language, query, handleQuery, handleSort, handleType, handleLanguage }) {
+function SearchBar({ sort, type, language, query, languageOptions, handleQuery, handleSort, handleType, handleLanguage }) {
 
   return(
     <div className='search-bar'>
@@ -23,6 +23,7 @@ function SearchBar({ sort, type, language, query, handleQuery, handleSort, handl
       <SelectButton 
         buttonName="Language"
         menuTitle="Select language"
+        options={['all', ...languageOptions]}
         radioGroupName="language"
         onChangeValue={handleLanguage}
         selected={language}
