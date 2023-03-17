@@ -3,15 +3,21 @@ import './styles.scss';
 
 function RepositoriesList({ repositories }) {
 
-  return(
-    <ul>
-      {repositories.map((repo) => (
-        <ListRow
-          key={repo.id}
-          item={repo} />
-      ) )}
-    </ul>
-  )
+  if (!repositories.length) {
+    return(
+      <div className='any-repository'>doesn’t have any repositories that match.</div>
+    )
+  } else {
+    return(
+      <ul>
+        {repositories.map((repo) => (
+          <ListRow
+            key={repo.id}
+            item={repo} />
+        ) )}
+      </ul>
+    )
+  }
 }
 
 export default RepositoriesList;
