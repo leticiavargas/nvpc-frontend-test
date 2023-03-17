@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
+import { FaTimes } from 'react-icons/fa';
 import { getRepositories } from 'services/repositories';
 import { RepositoriesList, SearchBar } from 'components';
 import { SORT } from 'utils';
@@ -7,7 +8,7 @@ import './styles.scss';
 function Repositories() {
 
   const [repositories, setRepositories] = useState();
-  const [sort, setSort] = useState('updated');
+  const [sort, setSort] = useState('updated-desc');
   const [type, setType] = useState('all');
   const [language, setLanguage] = useState('all');
   const [query, setQuery] = useState('');
@@ -23,7 +24,6 @@ function Repositories() {
   const handleQuery = (e) => {
     setQuery(e.target.value);
   }
-  
 
   const filterMessage = useMemo(() => {
     if (type !== 'all' || language !== 'all' || query.length ) {
@@ -46,6 +46,13 @@ function Repositories() {
     }
   }, [type, language, query, sort,  repositories]);
 
+  const handleClear = () => {
+    setSort('updated-desc');
+    setType('all');
+    setLanguage('all');
+    setQuery('');
+  }
+
   return (
     <main className='repositories'>
       <SearchBar
@@ -58,7 +65,12 @@ function Repositories() {
         handleType={(e) => setType(e.target.value)} 
         handleLanguage={(e) => setLanguage(e.target.value)}
       />
-      {filterMessage && <div className='filter-result'> {filterMessage}</div> }
+      {filterMessage && 
+        <div className='filter-result'> 
+          <span>{filterMessage}</span>
+          <button onClick={handleClear}> <FaTimes /> Clear filter</button>
+        </div> 
+      }
       {repositories && <RepositoriesList repositories={repositories} />}
       
     </main>

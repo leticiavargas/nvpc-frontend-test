@@ -8,6 +8,12 @@
   margin-right: 16px;
   flex: auto;
   overflow: hidden;
+  align-items: center;
+
+  svg {
+    margin: 0 16px;
+    color: colors.$N700;
+  }
 
   &:focus-within {
     border-color: colors.$blue;

@@ -10,5 +10,33 @@ main.repositories {
     border-bottom: 1px solid colors.$N700;
     padding: 16px 0 ;
     color: colors.$N200;
+    display: flex;
+    justify-content: space-between;
+
+    button {
+      background-color: transparent;
+      border: none;
+      color: colors.$N400;
+      font-size: inherit;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+
+      svg {
+        color: colors.$N200;
+        background-color: colors.$N700;
+        padding: 2px;
+        border-radius: 6px;
+        margin: 0 4px;
+      }
+
+      &:hover {
+        color: colors.$blue;
+
+        svg {
+          background-color: colors.$blue;
+        }
+      }
+    }
   }
 }

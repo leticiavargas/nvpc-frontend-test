@@ -25,10 +25,9 @@ function SearchInput ({onChange, value:valueProp, ...props}) {
   }, [changeHandler]);
   
   return(
-    <div className='search-input' >
+    <div className='search-input'>
       <input type="text" {...props} value={value} onChange={handleChange} />
-      
-      <Button> <FaSearch /> </Button>
+      <FaSearch /> 
     </div>
   )
 }

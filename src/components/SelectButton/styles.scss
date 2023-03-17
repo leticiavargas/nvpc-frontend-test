@@ -1,15 +1,21 @@
 .details {
   position: relative;
-}
 
-.details:not(:last-child) {
-  margin-right: 4px;
-}
+  .button {
+    svg {
+      margin-left: 4px;
+    }
+  }
 
-.details:hover {
+  &:not(:last-child) {
+    margin-right: 4px;
+  }
   
-  .select-menu {
-    display: block;
-    pointer-events: auto;
+  &:hover {
+    
+    .select-menu {
+      display: block;
+      pointer-events: auto;
+    }
   }
 }
